@@ -14,6 +14,9 @@ const { set } = require('mongoose'); // ???
 // CRUD routes
 router.post('/login', loginUser)
 router.post('/', registerUser)
-router.get('/me', protect, getMe)
+router.get('/me', protect, getMe) // protected route
+
+// By having "protect" function from authMiddleware as 2nd argument
+// this route can only be accessed with the correct token.
 
 module.exports = router;
